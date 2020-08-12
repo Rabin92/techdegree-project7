@@ -62,20 +62,43 @@
       <main>
         <div class="main-content">
           <div class="dashboard">
-            <section>
-              <h2 class="text-upper">Dashboard</h2>
-              <div class="input-search">
-                <input type="text" placeholder="Search" />
-              </div>
-            </section>
+            <h2 class="text-upper">Dashboard</h2>
+            <div class="input">
+              <input type="text" placeholder="Search" class="input-search" />
+              <svg
+                class="icon-search"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  d="M464,428,339.92,303.9a160.48,160.48,0,0,0,30.72-94.58C370.64,120.37,298.27,48,209.32,48S48,120.37,48,209.32s72.37,161.32,161.32,161.32a160.48,160.48,0,0,0,94.58-30.72L428,464ZM209.32,319.69A110.38,110.38,0,1,1,319.69,209.32,110.5,110.5,0,0,1,209.32,319.69Z"
+                />
+              </svg>
+            </div>
           </div>
           <!-- div dashboard closed -->
-          <div class="chart-line">Chart line</div>
-          <!-- div chart-line closed -->
-          <div class="chart-bar">Chart bar</div>
-          <!-- div chart-bar closed -->
-          <div class="chart-donut">Chart Donut</div>
-          <!-- div chart-donut closed -->
+
+          <section class="chart-line">
+            <h2 class="text-upper">Traffic</h2>
+            <div></div>
+          </section>
+          <!-- chart-line closed -->
+
+          <section class="chart-bar">
+            <h2 class="text-upper">Daily Traffic</h2>
+            <div class="widget-container">
+              <canvas id="js-barChart"></canvas>
+            </div>
+          </section>
+          <!-- chart-bar closed -->
+
+          <section class="chart-donut">
+            <h2 class="text-upper">Mobile Users</h2>
+            <div class="widget-container">
+              <canvas id="js-donutChart"></canvas>
+            </div>
+          </section>
+          <!-- chart-donut closed -->
 
           <!-- **************************** SOCIAL STATS ***************************** -->
           <div class="social-stats">
@@ -146,7 +169,7 @@
           <!-- div social-stats closed -->
 
           <!-- *************************** MEMBERS SECTION *************************** -->
-          <section class="members-section">
+          <section class="members-section settings">
             <h2 class="text-upper">New Members</h2>
 
             <div class="members-new brdr-line">
@@ -211,7 +234,7 @@
           </section>
 
           <!-- *********************** RECENT ACTIVITY SECTION *********************** -->
-          <section class="members-section">
+          <section class="members-section settings">
             <h2 class="text-upper">Recent Activity</h2>
 
             <div class="members-new brdr-line">
@@ -305,7 +328,7 @@
                 <p>
                   Dawn Wood commented on <em>Facebook's Changes</em> for 2020
                 </p>
-                <p><strong>2 day ago</strong></p>
+                <p><strong>2 days ago</strong></p>
               </div>
 
               <svg
@@ -377,10 +400,14 @@
                   <option value="" disabled hidden selected
                     >Select UK Timezone</option
                   >
-                  <option value="BST">BST - British Summer Time</option>
-                  <option value="PST">PST - Pitcairn Islands</option>
-                  <option value="EST">EST - Eastern Standard Time</option>
-                  <option value="AST">AST - Atlantic Standard Time</option>
+                  <option value="BST">BST - British Summer Time - 16:00</option>
+                  <option value="PST">PST - Pitcairn Islands - 10:00</option>
+                  <option value="EST"
+                    >EST - Eastern Standard Time - 14:00</option
+                  >
+                  <option value="AST"
+                    >AST - Atlantic Standard Time - 15:00</option
+                  >
                   <option value="Other">Other</option>
                 </optgroup>
               </select>
@@ -396,6 +423,7 @@
       </main>
     </div>
     <!-- div wrap closed -->
-    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="js/chart.js"></script>
   </body>
 </html>
