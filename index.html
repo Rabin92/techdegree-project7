@@ -22,8 +22,15 @@
         </h2>
 
         <div class="icon-name">
+          <img
+            src="icons/icon-red.png"
+            alt="red icon"
+            class="icon-red"
+            id="js-icon-red"
+          />
           <svg
-            class="icon icon-bell"
+            class="icon"
+            id="js-icon-bell"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 32 32"
           >
@@ -32,12 +39,59 @@
               fill="#fff"
             />
           </svg>
+          <div class="notifications" id="js-notifications">
+            <div class="notifications-message" id="js-notifications-msg">
+              <ul>
+                <li>
+                  <img
+                    src="images/member-1.jpg"
+                    alt="member-profile-img"
+                    class="notifications-members-img"
+                  />
+                  <div>
+                    <em> Victoria Chambers</em> commented on YourApp's SEO
+                  </div>
+                  <span id="js-close">&times;</span>
+                </li>
 
-          <img
-            src="icons/profile.png"
-            alt="img-profile"
-            class="icon icon-profile"
-          />
+                <li>
+                  <img
+                    src="images/member-2.jpg"
+                    alt="member-profile-img"
+                    class="notifications-members-img"
+                  />
+                  <div>
+                    <em>Dale Byrd</em> liked Facebook's Changes for 2020
+                  </div>
+                  <span id="js-close">&times;</span>
+                </li>
+
+                <li>
+                  <img
+                    src="images/member-3.jpg"
+                    alt="member-profile-img"
+                    class="notifications-members-img"
+                  />
+                  <div><em>Dawn Wood</em> left comment on YourApp's SEO</div>
+                  <span id="js-close">&times;</span>
+                </li>
+
+                <li>
+                  <img
+                    src="images/member-4.jpg"
+                    alt="member-profile-img"
+                    class="notifications-members-img"
+                  />
+                  <div>
+                    <em>Dan Oliver</em> commented on Facebook's Changes for 2020
+                  </div>
+                  <span id="js-close">&times;</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <img src="icons/profile.png" alt="img-profile" class="icon-profile" />
           <p>Rabin GM</p>
         </div>
       </header>
@@ -61,7 +115,7 @@
       <!-- ******************************** MAIN ********************************* -->
       <main>
         <div class="main-content">
-          <div class="dashboard">
+          <section class="dashboard">
             <h2 class="text-upper">Dashboard</h2>
             <div class="input">
               <input type="text" placeholder="Search" class="input-search" />
@@ -75,17 +129,30 @@
                 />
               </svg>
             </div>
-          </div>
-          <!-- div dashboard closed -->
+          </section>
+          <div class="alert" id="js-alert"></div>
+          <!-- div alert closed -->
 
           <section class="chart-line">
-            <h2 class="text-upper">Traffic</h2>
-            <div></div>
+            <div class="container-flex">
+              <h2 class="text-upper text-center">Traffic</h2>
+              <ul class="traffic-nav">
+                <li class="traffic-nav-link">Hourly</li>
+                <li class="traffic-nav-link">Daily</li>
+                <li class="traffic-nav-link">​Weekly​</li>
+                <li class="traffic-nav-link">Monthly</li>
+              </ul>
+            </div>
+
+            <div class="widget-container">
+              <canvas id="js-lineChart"></canvas>
+            </div>
           </section>
           <!-- chart-line closed -->
 
           <section class="chart-bar">
-            <h2 class="text-upper">Daily Traffic</h2>
+            <h2 class="text-upper text-center">Daily Traffic</h2>
+
             <div class="widget-container">
               <canvas id="js-barChart"></canvas>
             </div>
@@ -93,7 +160,7 @@
           <!-- chart-bar closed -->
 
           <section class="chart-donut">
-            <h2 class="text-upper">Mobile Users</h2>
+            <h2 class="text-upper text-center">Mobile Users</h2>
             <div class="widget-container">
               <canvas id="js-donutChart"></canvas>
             </div>
@@ -346,7 +413,7 @@
 
           <!-- ******************************** FORM ********************************* -->
           <section class="form members-section">
-            <h2 class="text-upper text-center">Message user</h2>
+            <h2 class="text-upper">Message user</h2>
             <form action="#" method="POST" class="form-user">
               <input type="text" placeholder="Search for User" />
               <textarea
@@ -361,7 +428,7 @@
 
           <!-- ****************************** SETTINGS ******************************* -->
           <section class="settings members-section">
-            <h2 class="text-upper text-center">Settings</h2>
+            <h2 class="text-upper">Settings</h2>
             <div class="setting-one">
               <p>Send Email Notifications</p>
               <label
@@ -423,7 +490,9 @@
       </main>
     </div>
     <!-- div wrap closed -->
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script src="js/chart.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>

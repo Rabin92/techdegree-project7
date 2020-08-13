@@ -17,11 +17,24 @@ body {
     "main";
 }
 
+/* ********************************* CURSOR ********************************* */
+.switch-light,
+select,
+.btn,
+.alert-banner-close,
+.traffic-nav li,
+.icon-nav,
+#js-icon-bell,
+#js-close {
+  cursor: pointer;
+}
+
 /* ****************************** HEADER STYLES ***************************** */
 header,
 .icon-name {
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
 
 header {
@@ -33,28 +46,36 @@ header {
 
 .icon {
   height: 30px;
+  border-right: 2px solid rgb(255, 251, 251);
+  padding-right: 10px;
 }
 
-.icon-bell {
-  border-right: 2px solid #fff;
-  padding-right: 10px;
+.icon-red {
+  height: 15px;
+  position: absolute;
+  top: -5px;
 }
 
 .icon-profile {
   border-radius: 50%;
   background: gold;
   margin: 0 10px 0 10px;
+  height: 35px;
+  border: 2px solid #fff;
 }
 
 div.icon-name:last-child {
   align-items: center;
 }
 
+.icon-name > p {
+  width: 80px;
+}
+
 .dashboard {
   display: grid;
   grid-template-columns: 175px 1fr;
   grid-template-rows: 45px;
-  border: 6px solid rgb(60, 185, 35);
 }
 
 .dashboard > h2 {
@@ -87,7 +108,7 @@ input[type="text"].input-search {
 
 /* ******************************* NAV STYLES ******************************* */
 nav {
-  background: green;
+  background: brown;
   grid-area: nav;
   display: flex;
   justify-content: space-evenly;
@@ -96,7 +117,6 @@ nav {
 
 .icon-nav {
   height: 30px;
-  cursor: pointer;
 }
 
 /* *************************** MAIN CONTENT STYLES ************************** */
@@ -110,11 +130,22 @@ nav {
 }
 
 div.social-stats > h2,
-.members-section > h2 {
-  margin-bottom: 10px;
+.members-section > h2,
+.container-flex > h2,
+.chart-bar > h2,
+.chart-donut > h2 {
+  margin-bottom: 15px;
 }
 
 .text-center {
+  text-align: center;
+}
+
+.text-upper {
+  text-transform: uppercase;
+}
+
+.members-section {
   text-align: center;
 }
 
@@ -125,7 +156,7 @@ main {
 div.main-content {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr;
   grid-gap: 10px;
   border: 6px solid rgb(47, 195, 236);
 }
@@ -167,17 +198,9 @@ div.social-text > p {
   font-size: 3em;
 }
 
-.text-upper {
-  text-transform: uppercase;
-}
-
-.members-section {
-  text-align: center;
-}
-
 .members-img {
   border-radius: 50%;
-  height: 40px;
+  height: 55px;
   border: 2px solid purple;
 }
 
@@ -189,33 +212,85 @@ div.social-text > p {
   border-bottom: 1px solid grey;
 }
 
+.chart-line,
 .chart-bar,
 .chart-donut {
   border: 5px solid brown;
   overflow: hidden;
-  width: ​45vw;
   padding: 10px;
 }
 
-.chart-bar > h2,
-.chart-donut > h2 {
-  margin-bottom: 15px;
-}
-
 .widget-container {
-  height: 250px;
-}
-
-.dashboard {
-  background: purple;
+  height: 280px;
 }
 
 .arrow-right {
   padding-top: 15px;
 }
 
-.chart-line {
-  background: firebrick;
+.traffic-nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.traffic-nav li:hover {
+  border-bottom: 1px solid black;
+}
+
+.container-flex {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* ****************************** ALERT BANNER ****************************** */
+.alert {
+  background: red;
+  padding: 10px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 0 0.6em;
+}
+
+.alert-banner {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ***************************** ALERT BELL ICON **************************** */
+.notifications {
+  position: relative;
+}
+
+.notifications-message {
+  position: absolute;
+  top: 25px;
+  width: 180px;
+  right: -85px;
+  color: #fff;
+  z-index: 1000;
+  opacity: 0.95;
+  border-radius: 5px;
+}
+
+.notifications-message ul li {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  background: brown;
+  border-bottom: 1px solid grey;
+}
+
+.notifications-message ul li:last-child {
+  border-bottom: none;
+}
+
+.notifications-members-img {
+  height: 25px;
+  padding-right: 10px;
+  border-radius: 50%;
 }
 
 /* ********************************** FORM ********************************** */
@@ -241,7 +316,6 @@ textarea::placeholder {
   border: none;
   color: #fff;
   border-radius: 5px;
-  cursor: pointer;
   height: 45px;
 }
 
@@ -256,11 +330,6 @@ textarea::placeholder {
   display: flex;
   justify-content: space-between;
   margin-bottom: 15px;
-}
-
-.switch-light,
-select {
-  cursor: pointer;
 }
 
 .switch-light {
@@ -303,6 +372,10 @@ select {
     display: flex;
   }
 
+  .members-new-info {
+    align-self: center;
+  }
+
   .members-new > p,
   .members-new > svg {
     margin-left: auto;
@@ -314,6 +387,12 @@ select {
 
   .arrow-right {
     padding-top: initial;
+  }
+
+  .container-flex {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: initial;
   }
 
   .dashboard,
@@ -328,6 +407,15 @@ select {
   /* Settings */
   .switch-light {
     width: 60%;
+  }
+
+  .alert {
+    grid-column: 1/3;
+  }
+
+  .notifications-message {
+    width: 230px;
+    right: -2px;
   }
 }
 
