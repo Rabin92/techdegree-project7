@@ -133,14 +133,16 @@
           <div class="alert" id="js-alert"></div>
           <!-- div alert closed -->
 
-          <section class="chart-line">
+          <section class="chart-line" id="#chart-line">
             <div class="container-flex">
               <h2 class="text-upper text-center">Traffic</h2>
               <ul class="traffic-nav">
-                <li class="traffic-nav-link">Hourly</li>
-                <li class="traffic-nav-link">Daily</li>
-                <li class="traffic-nav-link">​Weekly​</li>
-                <li class="traffic-nav-link">Monthly</li>
+                <li class="traffic-nav-hourly" onclick="chartHourly()">
+                  Hourly
+                </li>
+                <li class="traffic-nav-daily" onclick="chartDaily()">Daily</li>
+                <li class="traffic-nav-weekly">​Weekly​</li>
+                <li class="traffic-nav-monthly">Monthly</li>
               </ul>
             </div>
 
@@ -493,6 +495,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script src="js/chart.js"></script>
+    <script src="js/chartupdate.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>

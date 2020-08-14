@@ -252,11 +252,17 @@ div.social-text > p {
   border-radius: 5px;
   padding: 10px;
   margin: 0 0.6em;
+  transition: all 3s linear 3s;
 }
 
 .alert-banner {
   display: flex;
   justify-content: space-between;
+}
+
+.alert-banner-close:hover {
+  color: rgb(39, 58, 39);
+  transition: all 3s linear 3s;
 }
 
 /* ***************************** ALERT BELL ICON **************************** */

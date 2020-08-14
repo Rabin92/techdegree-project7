@@ -1,25 +1,25 @@
 // Select elements
+let lineChart = document.querySelector("#js-lineChart").getContext("2d");
 let barChart = document.querySelector("#js-barChart").getContext("2d");
 let donutChart = document.querySelector("#js-donutChart").getContext("2d");
-let lineChart = document.querySelector("#js-lineChart").getContext("2d");
 
 /* ******************************* LINE CHART ******************************* */
-lineChart = new Chart(lineChart, {
-  type: "line",
 
+let lineCharts = new Chart(lineChart, {
+  type: "line",
   data: {
     labels: [
-      "16-22",
-      "23-29",
-      "30-5",
-      "6-12",
-      "13-19",
-      "20-26",
-      "27-3",
-      "4-10",
-      "11-17",
-      "18-24",
-      "25-31",
+      "Jan",
+      "Feb",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "Aug",
+      "Sep",
+      "Nov",
+      "Dec",
     ],
 
     datasets: [
@@ -53,7 +53,6 @@ lineChart = new Chart(lineChart, {
 
 /* ******************************** BAR CHART ******************************* */
 
-// Create a chart
 barChart = new Chart(barChart, {
   type: "bar",
   data: {
