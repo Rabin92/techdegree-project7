@@ -26,6 +26,12 @@ notifications.addEventListener("click", (e) => {
   // If notification is less than 1, remove alert icon.
   if (notificationsMsg.length < 1) {
     iconAlert.style.display = "none";
+
+    // If notification is less than 1, display No new message alert.
+    const notificationsMsg = document.querySelector("#js-notifications-msg ul");
+    const newEl = document.createElement("LI");
+    newEl.textContent = `No new notifications!`;
+    notificationsMsg.appendChild(newEl);
   }
 });
 
@@ -46,5 +52,98 @@ alertBanner.addEventListener("click", (e) => {
     setTimeout(function () {
       alertBanner.style.display = "none";
     }, 1000);
+  }
+});
+
+/* ***************************** FORM VALIDATION **************************** */
+const form = document.querySelector("#js-form");
+const userName = document.querySelector("#js-name");
+const userMsg = document.querySelector("#js-message");
+const inputError = document.querySelector("#js-input-error");
+const textAreaError = document.querySelector("#js-textarea-error");
+const success = document.querySelector("#js-success");
+
+form.addEventListener("click", (e) => {
+  const theTarget = e.target;
+  if (theTarget.tagName === "BUTTON") {
+    if (userName.value === "") {
+      inputError.innerHTML = `<p class="js-error">This field is required!</p>`;
+      userName.style.border = "1px solid red";
+    } else {
+      inputError.innerHTML = "";
+      userName.style.border = "1px solid black";
+    }
+
+    if (userMsg.value === "") {
+      textAreaError.innerHTML = `<p class="js-error">This field is required!<p/>`;
+      userMsg.style.border = "1px solid red";
+    } else {
+      textAreaError.innerHTML = "";
+      userMsg.style.border = "1px solid black";
+    }
+
+    if (userName.value !== "" && userMsg.value !== "") {
+      success.innerHTML = `<p class="js-success">Message successfully sent to: ${userName.value}</p>`;
+    } else {
+      success.innerHTML = "";
+    }
+  }
+});
+
+/* *************************** AUTOCOMPLETE SEARCH ************************** */
+const listNames = document.querySelector("#js-list-names ul");
+listNames.style.display = "none";
+
+// Store members name in an array
+const memberNames = [
+  "Victoria Chambers",
+  "Dale Byrd",
+  "Dan Oliver",
+  "Dawn Wood",
+];
+
+// Create "LI" element and append it to "listNames"
+for (let i = 0; i < memberNames.length; i++) {
+  const names = memberNames[i];
+  const newEl = document.createElement("LI");
+  newEl.textContent = names;
+  listNames.appendChild(newEl);
+}
+
+const displayMatchedNames = () => {
+  const inputValue = userName.value.toUpperCase();
+
+  if (inputValue.length < 1) {
+    listNames.style.display = "none";
+  } else {
+    listNames.style.display = "block";
+  }
+
+  // Iterate through "<li>" members list.
+  const memberLists = listNames.querySelectorAll("li");
+  for (let i = 0; i < memberLists.length; i++) {
+    const name = memberLists[i].textContent.toUpperCase();
+    //  If the member's name stored in <li> matches the value typed in input field, display as block else display it none.
+    if (name.includes(inputValue)) {
+      memberLists[i].style.display = "block";
+    } else {
+      memberLists[i].style.display = "none";
+    }
+  }
+};
+
+// Call displayMatchedNames function
+userName.addEventListener("input", () => {
+  displayMatchedNames();
+});
+
+// Place the selected value in the input field
+listNames.addEventListener("click", (e) => {
+  const selectNames = e.target.textContent;
+
+  const memberLists = document.querySelector("#js-list-names ul").children;
+  for (let i = 0; i < memberLists.length; i++) {
+    userName.value = selectNames;
+    listNames.style.display = "none";
   }
 });

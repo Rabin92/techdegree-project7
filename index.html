@@ -119,15 +119,6 @@
             <h2 class="text-upper">Dashboard</h2>
             <div class="input">
               <input type="text" placeholder="Search" class="input-search" />
-              <svg
-                class="icon-search"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 512 512"
-              >
-                <path
-                  d="M464,428,339.92,303.9a160.48,160.48,0,0,0,30.72-94.58C370.64,120.37,298.27,48,209.32,48S48,120.37,48,209.32s72.37,161.32,161.32,161.32a160.48,160.48,0,0,0,94.58-30.72L428,464ZM209.32,319.69A110.38,110.38,0,1,1,319.69,209.32,110.5,110.5,0,0,1,209.32,319.69Z"
-                />
-              </svg>
             </div>
           </section>
           <div class="alert" id="js-alert"></div>
@@ -137,12 +128,10 @@
             <div class="container-flex">
               <h2 class="text-upper text-center">Traffic</h2>
               <ul class="traffic-nav">
-                <li class="traffic-nav-hourly" onclick="chartHourly()">
-                  Hourly
-                </li>
-                <li class="traffic-nav-daily" onclick="chartDaily()">Daily</li>
-                <li class="traffic-nav-weekly">​Weekly​</li>
-                <li class="traffic-nav-monthly">Monthly</li>
+                <li onclick="chartHourly()">Hourly</li>
+                <li onclick="chartDaily()">Daily</li>
+                <li onclick="chartWeekly()">​Weekly​</li>
+                <li onclick="chartMonthly()">Monthly</li>
               </ul>
             </div>
 
@@ -416,14 +405,29 @@
           <!-- ******************************** FORM ********************************* -->
           <section class="form members-section">
             <h2 class="text-upper">Message user</h2>
-            <form action="#" method="POST" class="form-user">
-              <input type="text" placeholder="Search for User" />
+
+            <form
+              action="#"
+              method="POST"
+              autocomplete="off"
+              class="form-user"
+              id="js-form"
+            >
+              <div id="js-input-error"></div>
+
+              <input type="text" placeholder="Search for User" id="js-name" />
+              <div id="js-list-names">
+                <ul></ul>
+              </div>
+              <div id="js-textarea-error"></div>
+
               <textarea
                 name="user-message"
-                id="message"
+                id="js-message"
                 rows="5"
                 placeholder="Message for User"
               ></textarea>
+              <div id="js-success"></div>
               <button type="button" class="btn">SEND</button>
             </form>
           </section>
