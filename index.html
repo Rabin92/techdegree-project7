@@ -9,7 +9,6 @@
       type="text/css"
       href="https://cdn.jsdelivr.net/npm/css-toggle-switch@latest/dist/toggle-switch.css"
     />
-
     <link rel="stylesheet" href="css/styles.css" />
     <title>WebApp | Dashboard</title>
   </head>
@@ -127,11 +126,11 @@
           <section class="chart-line" id="#chart-line">
             <div class="container-flex">
               <h2 class="text-upper text-center">Traffic</h2>
-              <ul class="traffic-nav">
-                <li onclick="chartHourly()">Hourly</li>
-                <li onclick="chartDaily()">Daily</li>
-                <li onclick="chartWeekly()">​Weekly​</li>
-                <li onclick="chartMonthly()">Monthly</li>
+              <ul class="traffic-nav" id="js-traffic-nav">
+                <li id="js-hourly">Hourly</li>
+                <li id="js-daily">Daily</li>
+                <li id="js-weekly">​Weekly​</li>
+                <li id="js-monthly">Monthly</li>
               </ul>
             </div>
 
@@ -437,12 +436,8 @@
             <h2 class="text-upper">Settings</h2>
             <div class="setting-one">
               <p>Send Email Notifications</p>
-              <label
-                class="switch-light switch-candy switch-candy-yellow"
-                onclick=""
-              >
-                <input type="checkbox" />
-
+              <label class="switch-light switch-candy switch-candy-yellow">
+                <input type="checkbox" id="js-notifications-btn" />
                 <span>
                   <span>Off</span>
                   <span>On</span>
@@ -453,11 +448,8 @@
 
             <div class="setting-two">
               <p>Set Profile to Public</p>
-              <label
-                class="switch-light switch-candy switch-candy-yellow"
-                onclick=""
-              >
-                <input type="checkbox" />
+              <label class="switch-light switch-candy switch-candy-yellow">
+                <input type="checkbox" id="js-profile-btn" />
 
                 <span>
                   <span>Off</span>
@@ -468,27 +460,26 @@
             </div>
             <!-- Select Element -->
             <div class="setting-timezone">
-              <select name="timezone" id="timezone-uk">
+              <select name="timezone" id="js-timezone">
                 <optgroup label="Choose One">
                   <option value="" disabled hidden selected
-                    >Select UK Timezone</option
+                    >-- Select UK Timezone --</option
                   >
-                  <option value="BST">BST - British Summer Time - 16:00</option>
-                  <option value="PST">PST - Pitcairn Islands - 10:00</option>
-                  <option value="EST"
-                    >EST - Eastern Standard Time - 14:00</option
-                  >
-                  <option value="AST"
-                    >AST - Atlantic Standard Time - 15:00</option
-                  >
-                  <option value="Other">Other</option>
+                  <option value="BST">BST - British Summer Time</option>
+                  <option value="PST">PST - Pitcairn Islands</option>
+                  <option value="EST">EST - Eastern Standard Time</option>
+                  <option value="AST">AST - Atlantic Standard Time</option>
                 </optgroup>
               </select>
             </div>
 
             <div class="setting-button">
-              <button type="button" class="btn btn-1">SAVE</button>
-              <button type="button" class="btn btn-2">CANCEL</button>
+              <button type="button" class="btn btn-1" id="js-save-button">
+                SAVE
+              </button>
+              <button type="button" class="btn btn-2" id="js-clear-button">
+                CANCEL
+              </button>
             </div>
           </section>
         </div>

@@ -344,17 +344,23 @@ textarea::placeholder {
   border-radius: 5px;
 }
 
+.members-section {
+  position: relative;
+}
+
 #js-list-names > ul {
   margin-bottom: 5px;
-  position: relative;
-  bottom: 10px;
-  border: 1px solid black;
+  position: absolute;
   border-radius: 5px;
-  box-shadow: 0 8px 6px -6px black;
+  box-shadow: 4px 6px 0 rgba(32, 33, 36, 0.28);
+  background-color: #fff;
+  top: 90px;
+  width: 95%;
 }
 
 #js-list-names > ul > li {
   padding: 5px;
+
   cursor: pointer;
 }
 

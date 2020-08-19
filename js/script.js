@@ -17,6 +17,7 @@ iconBell.addEventListener("click", () => {
   }
 });
 
+// Remove notifications when the user clicks on 'x'
 notifications.addEventListener("click", (e) => {
   const theTarget = e.target;
   if (theTarget.tagName === "SPAN") {
@@ -27,10 +28,10 @@ notifications.addEventListener("click", (e) => {
   if (notificationsMsg.length < 1) {
     iconAlert.style.display = "none";
 
-    // If notification is less than 1, display No new message alert.
+    // If notification is less than 1, display 'No new message alert'.
     const notificationsMsg = document.querySelector("#js-notifications-msg ul");
     const newEl = document.createElement("LI");
-    newEl.textContent = `No new notifications!`;
+    newEl.textContent = `No recent notifications`;
     notificationsMsg.appendChild(newEl);
   }
 });
@@ -137,7 +138,7 @@ userName.addEventListener("input", () => {
   displayMatchedNames();
 });
 
-// Place the selected value in the input field
+// Place the selected name in the input field
 listNames.addEventListener("click", (e) => {
   const selectNames = e.target.textContent;
 
@@ -147,3 +148,81 @@ listNames.addEventListener("click", (e) => {
     listNames.style.display = "none";
   }
 });
+
+/* ****************************** LOCAL STORAGE ***************************** */
+const notificationsBtn = document.querySelector("#js-notifications-btn");
+const profileBtn = document.querySelector("#js-profile-btn");
+const timeZone = document.querySelector("#js-timezone");
+
+// Buttons
+const saveBtn = document.querySelector("#js-save-button");
+const clearBtn = document.querySelector("#js-clear-button");
+
+// Listen to 'click' on save button
+saveBtn.addEventListener("click", () => {
+  const email = notificationsBtn.checked;
+  const profile = profileBtn.checked;
+
+  //  Add key and value to localStorage.
+  if (email) {
+    localStorage.setItem("email", true);
+  } else {
+    localStorage.setItem("email", false);
+  }
+  if (profile) {
+    localStorage.setItem("profile", true);
+  } else {
+    localStorage.setItem("profile", false);
+  }
+
+  localStorage.setItem("timezone", timeZone.selectedIndex);
+  alert("Settings saved");
+});
+
+/* 
+  This function will apply the settings when the page is loaded.
+  Retrieve a value by the key from localStorage.
+*/
+const load = () => {
+  // Email setting
+  if (localStorage.getItem("email") === "true") {
+    notificationsBtn.checked = true;
+  } else {
+    notificationsBtn.checked = false;
+  }
+  // Profile Setting
+  if (localStorage.getItem("profile") === "true") {
+    profileBtn.checked = true;
+  } else {
+    profileBtn.checked = false;
+  }
+  // Timezone setting
+  if (localStorage.getItem("timezone") === "1") {
+    timeZone.selectedIndex = 1;
+  } else if (localStorage.getItem("timezone") === "2") {
+    timeZone.selectedIndex = 2;
+  } else if (localStorage.getItem("timezone") === "3") {
+    timeZone.selectedIndex = 3;
+  } else if (localStorage.getItem("timezone") === "4") {
+    timeZone.selectedIndex = 4;
+  }
+  // localStorage.getItem("timezone");
+};
+
+/*
+  Listen to 'click' on cancel button. 
+  Reset the settings back to default.
+*/
+clearBtn.addEventListener("click", () => {
+  localStorage.clear();
+  location.reload();
+
+  alert("Reset");
+});
+
+/*
+   Call a 'load()' function.
+   This function will apply the settings that the user selects 
+   and stays the same even after a page refresh. 
+*/
+load();

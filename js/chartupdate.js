@@ -1,4 +1,6 @@
 /* ****************************** CHART UPDATE ****************************** */
+const trafficNav = document.querySelector("#js-traffic-nav");
+
 const chartHourly = () => {
   lineCharts.data.datasets[0].data = [
     2000,
@@ -66,7 +68,25 @@ const chartMonthly = () => {
     2300,
     2000,
     1400,
-    1450,
+    2500,
   ];
   lineCharts.update();
 };
+
+/*
+   Add event listener to the parent element of <li> tags
+   If the 'id' matches, apply the call function to update the chart data
+*/
+
+trafficNav.addEventListener("click", (e) => {
+  const theTarget = e.target;
+  if (theTarget.id === "js-hourly") {
+    chartHourly();
+  } else if (theTarget.id === "js-daily") {
+    chartDaily();
+  } else if (theTarget.id === "js-weekly") {
+    chartWeekly();
+  } else if (theTarget.id === "js-monthly") {
+    chartMonthly();
+  }
+});
