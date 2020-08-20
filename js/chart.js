@@ -27,6 +27,9 @@ let lineCharts = new Chart(lineChart, {
       {
         backgroundColor: "rgba(0, 0, 0, 0.1)",
         borderColor: "#7477BF",
+        pointBorderColor: "#ff6666",
+        pointBackgroundColor: "#fff",
+        pointBorderWidth: "4",
         data: [
           750,
           1250,
@@ -74,7 +77,7 @@ barChart = new Chart(barChart, {
 
     datasets: [
       {
-        backgroundColor: "#7477BF",
+        backgroundColor: "rgba(0, 0, 0, 0.8)",
         borderColor: "#7477BF",
         data: [75, 115, 175, 125, 225, 200, 100],
       },
@@ -110,7 +113,7 @@ donutChart = new Chart(donutChart, {
     datasets: [
       {
         data: [2000, 550, 500],
-        backgroundColor: ["#7477BF", "#78CF82", "#51B6C8"],
+        backgroundColor: ["rgba(0, 0, 0, 0.8)", "lightgreen", "skyblue"],
       },
     ],
   },

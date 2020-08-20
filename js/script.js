@@ -24,11 +24,14 @@ notifications.addEventListener("click", (e) => {
     theTarget.parentNode.remove();
   }
 
-  // If notification is less than 1, remove alert icon.
+  /* 
+   If notifications is less than 1, remove alert icon
+   then display 'No new message alert'.
+  */
+
   if (notificationsMsg.length < 1) {
     iconAlert.style.display = "none";
 
-    // If notification is less than 1, display 'No new message alert'.
     const notificationsMsg = document.querySelector("#js-notifications-msg ul");
     const newEl = document.createElement("LI");
     newEl.textContent = `No recent notifications`;
@@ -41,7 +44,7 @@ const alertBanner = document.querySelector("#js-alert");
 
 alertBanner.innerHTML = `
   <div class="alert-banner">
-  <p><strong>Alert:</strong>You have <strong>6</strong> overdue tasks to complete.</p>
+  <p><strong>Alert:</strong> You have <strong>6</strong> overdue tasks to complete.</p>
   <p class="alert-banner-close">&times;</p>
   </div>
 `;
@@ -50,9 +53,7 @@ alertBanner.innerHTML = `
 alertBanner.addEventListener("click", (e) => {
   const element = e.target;
   if (element.classList.contains("alert-banner-close")) {
-    setTimeout(function () {
-      alertBanner.style.display = "none";
-    }, 1000);
+    alertBanner.style.display = "none";
   }
 });
 
@@ -74,7 +75,6 @@ form.addEventListener("click", (e) => {
       inputError.innerHTML = "";
       userName.style.border = "1px solid black";
     }
-
     if (userMsg.value === "") {
       textAreaError.innerHTML = `<p class="js-error">This field is required!<p/>`;
       userMsg.style.border = "1px solid red";
@@ -82,12 +82,19 @@ form.addEventListener("click", (e) => {
       textAreaError.innerHTML = "";
       userMsg.style.border = "1px solid black";
     }
-
     if (userName.value !== "" && userMsg.value !== "") {
-      success.innerHTML = `<p class="js-success">Message successfully sent to: ${userName.value}</p>`;
+      success.innerHTML = `<p class="js-close">Message successfully sent to: ${userName.value}<span class="js-close-alert">&times;</span></p>`;
     } else {
       success.innerHTML = "";
     }
+  }
+});
+
+// Click on 'x' to close success alert message.
+document.querySelector("#js-form").addEventListener("click", (e) => {
+  const theTarget = e.target;
+  if (theTarget.tagName === "SPAN") {
+    theTarget.parentNode.remove();
   }
 });
 
@@ -153,8 +160,7 @@ listNames.addEventListener("click", (e) => {
 const notificationsBtn = document.querySelector("#js-notifications-btn");
 const profileBtn = document.querySelector("#js-profile-btn");
 const timeZone = document.querySelector("#js-timezone");
-
-// Buttons
+const alertMsg = document.querySelector("#js-alert-msg");
 const saveBtn = document.querySelector("#js-save-button");
 const clearBtn = document.querySelector("#js-clear-button");
 
@@ -176,7 +182,9 @@ saveBtn.addEventListener("click", () => {
   }
 
   localStorage.setItem("timezone", timeZone.selectedIndex);
-  alert("Settings saved");
+
+  // Display message
+  alertMsg.innerHTML = `<p class="js-close">Settings successfully saved!<span class="js-close-alert">&times;</span></p>`;
 });
 
 /* 
@@ -206,7 +214,6 @@ const load = () => {
   } else if (localStorage.getItem("timezone") === "4") {
     timeZone.selectedIndex = 4;
   }
-  // localStorage.getItem("timezone");
 };
 
 /*
@@ -214,14 +221,29 @@ const load = () => {
   Reset the settings back to default.
 */
 clearBtn.addEventListener("click", () => {
-  localStorage.clear();
-  location.reload();
+  if (localStorage.getItem("email") === "true") {
+    localStorage.setItem("email", (notificationsBtn.checked = false));
+  }
+  if (localStorage.getItem("profile") === "true") {
+    localStorage.setItem("profile", (profileBtn.checked = false));
+  }
+  if (localStorage.getItem("timezone") > "0") {
+    localStorage.setItem("timezone", (timeZone.selectedIndex = "0"));
+  }
 
-  alert("Reset");
+  // Display message
+  alertMsg.innerHTML = `<p class="js-close">Settings restored to default!<span class="js-close-alert">&times;</span></p>`;
+});
+
+// Click on 'x' to close settings alert message.
+document.querySelector(".close").addEventListener("click", (e) => {
+  const theTarget = e.target;
+  if (theTarget.className === "js-close-alert") {
+    theTarget.parentNode.remove();
+  }
 });
 
 /*
-   Call a 'load()' function.
    This function will apply the settings that the user selects 
    and stays the same even after a page refresh. 
 */

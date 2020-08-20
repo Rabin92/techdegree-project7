@@ -97,18 +97,33 @@
 
       <!-- ********************************* NAV ********************************* -->
       <nav>
-        <img
-          src="icons/icon-dashboard.svg"
-          alt="icon-dashboard"
-          class="icon-nav"
-        />
-        <img src="icons/icon-members.svg" alt="icon-members" class="icon-nav" />
-        <img src="icons/icon-visits.svg" alt="icon-visits" class="icon-nav" />
-        <img
-          src="icons/icon-settings.svg"
-          alt="icon-settings"
-          class="icon-nav"
-        />
+        <a href="#chart-line">
+          <img
+            src="icons/icon-dashboard.svg"
+            alt="icon-dashboard"
+            class="icon-nav"
+          />
+        </a>
+
+        <a href="#members">
+          <img
+            src="icons/icon-members.svg"
+            alt="icon-members"
+            class="icon-nav"
+          />
+        </a>
+
+        <a href="#chart-data">
+          <img src="icons/icon-visits.svg" alt="icon-visits" class="icon-nav" />
+        </a>
+
+        <a href="#settings">
+          <img
+            src="icons/icon-settings.svg"
+            alt="icon-settings"
+            class="icon-nav"
+          />
+        </a>
       </nav>
 
       <!-- ******************************** MAIN ********************************* -->
@@ -120,7 +135,7 @@
               <input type="text" placeholder="Search" class="input-search" />
             </div>
           </section>
-          <div class="alert" id="js-alert"></div>
+          <div id="js-alert"></div>
           <!-- div alert closed -->
 
           <section class="chart-line" id="#chart-line">
@@ -140,7 +155,7 @@
           </section>
           <!-- chart-line closed -->
 
-          <section class="chart-bar">
+          <section class="chart-bar add-border" id="chart-data">
             <h2 class="text-upper text-center">Daily Traffic</h2>
 
             <div class="widget-container">
@@ -149,7 +164,7 @@
           </section>
           <!-- chart-bar closed -->
 
-          <section class="chart-donut">
+          <section class="chart-donut add-border">
             <h2 class="text-upper text-center">Mobile Users</h2>
             <div class="widget-container">
               <canvas id="js-donutChart"></canvas>
@@ -226,7 +241,7 @@
           <!-- div social-stats closed -->
 
           <!-- *************************** MEMBERS SECTION *************************** -->
-          <section class="members-section settings">
+          <section class="members-section add-border" id="members">
             <h2 class="text-upper">New Members</h2>
 
             <div class="members-new brdr-line">
@@ -291,7 +306,7 @@
           </section>
 
           <!-- *********************** RECENT ACTIVITY SECTION *********************** -->
-          <section class="members-section settings">
+          <section class="members-section add-border">
             <h2 class="text-upper">Recent Activity</h2>
 
             <div class="members-new brdr-line">
@@ -402,7 +417,7 @@
           </section>
 
           <!-- ******************************** FORM ********************************* -->
-          <section class="form members-section">
+          <section class="form members-section add-border">
             <h2 class="text-upper">Message user</h2>
 
             <form
@@ -432,11 +447,12 @@
           </section>
 
           <!-- ****************************** SETTINGS ******************************* -->
-          <section class="settings members-section">
+          <section class="members-section add-border close" id="settings">
+            <div id="js-alert-msg"></div>
             <h2 class="text-upper">Settings</h2>
             <div class="setting-one">
               <p>Send Email Notifications</p>
-              <label class="switch-light switch-candy switch-candy-yellow">
+              <label class="switch-light switch-candy switch-candy-green">
                 <input type="checkbox" id="js-notifications-btn" />
                 <span>
                   <span>Off</span>
@@ -448,7 +464,7 @@
 
             <div class="setting-two">
               <p>Set Profile to Public</p>
-              <label class="switch-light switch-candy switch-candy-yellow">
+              <label class="switch-light switch-candy switch-candy-green">
                 <input type="checkbox" id="js-profile-btn" />
 
                 <span>

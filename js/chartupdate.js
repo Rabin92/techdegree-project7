@@ -16,6 +16,7 @@ const chartHourly = () => {
     1200,
     1000,
   ];
+  lineCharts.data.datasets[0].borderColor = ["#000"];
   lineCharts.update();
 };
 
@@ -34,6 +35,7 @@ const chartDaily = () => {
     1300,
     900,
   ];
+  lineCharts.data.datasets[0].borderColor = ["grey"];
   lineCharts.update();
 };
 
@@ -52,6 +54,7 @@ const chartWeekly = () => {
     1900,
     2500,
   ];
+  lineCharts.data.datasets[0].borderColor = ["darkgreen"];
   lineCharts.update();
 };
 
@@ -70,6 +73,7 @@ const chartMonthly = () => {
     1400,
     2500,
   ];
+  lineCharts.data.datasets[0].borderColor = ["purple"];
   lineCharts.update();
 };
 
