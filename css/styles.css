@@ -24,6 +24,9 @@ body {
     "nav"
     "main";
 }
+main {
+  padding-bottom: 40px;
+}
 
 /* ********************************* CURSOR ********************************* */
 .switch-light,
@@ -53,13 +56,61 @@ header {
   grid-area: header;
 }
 
+@keyframes swing {
+  0% {
+    transform: rotateZ(0);
+  }
+  25% {
+    transform: rotateZ(25deg);
+  }
+  50% {
+    transform: rotateZ(-15deg);
+  }
+  75% {
+    transform: rotateZ(10deg);
+  }
+  100% {
+    transform: rotateZ(0);
+  }
+}
+
 .icon {
-  height: 30px;
-  border-right: 2px solid rgb(255, 251, 251);
+  height: 25px;
   padding-right: 10px;
 }
 
+.border {
+  border-right: 2px solid rgb(255, 251, 251);
+}
+
+.icon:hover {
+  animation: swing 1s cubic-bezier(0.39, 0.575, 0.565, 1) backwards;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0.1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+
+  75% {
+    opacity: 0.9;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
 .icon-red {
+  animation: pulse 1.5s ease-out infinite 1s;
   height: 15px;
   position: absolute;
   top: -5px;
@@ -67,10 +118,10 @@ header {
 
 .icon-profile {
   border-radius: 50%;
-  background: gold;
+  background: rgb(109, 100, 54);
   margin: 0 10px 0 10px;
   height: 35px;
-  border: 2px solid #fff;
+  border: 2px inset rgb(127, 127, 127);
 }
 
 div.icon-name:last-child {
@@ -487,6 +538,7 @@ select {
   nav {
     flex-direction: column;
     justify-content: start;
+    padding-top: 30px;
   }
   .icon-nav {
     margin-bottom: 20px;
