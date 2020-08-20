@@ -1,0 +1,57 @@
+// Bell Icon
+.icon {
+  height: 25px;
+  padding-right: 10px;
+}
+
+@keyframes swing {
+  0% {
+    transform: rotateZ(0);
+  }
+  25% {
+    transform: rotateZ(25deg);
+  }
+  50% {
+    transform: rotateZ(-15deg);
+  }
+  75% {
+    transform: rotateZ(10deg);
+  }
+  100% {
+    transform: rotateZ(0);
+  }
+}
+
+.icon:hover {
+  animation: swing 1s cubic-bezier(0.39, 0.575, 0.565, 1) backwards;
+}
+
+// Notification red circle
+@keyframes pulse {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0.1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+
+  75% {
+    opacity: 0.9;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.icon-red {
+  animation: pulse 1.5s ease-out infinite 1s;
+  height: 15px;
+  position: absolute;
+  top: -5px;
+}

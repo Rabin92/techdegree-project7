@@ -1,0 +1,12 @@
+/* ******************************* NAV STYLES ******************************* */
+nav {
+  background: #1d1d1f;
+  grid-area: nav;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+}
+
+.icon-nav {
+  height: 30px;
+}
