@@ -51,13 +51,15 @@ header {
   border-radius: 2px;
   position: relative;
   &-search {
-    background: $color-white url("../icons/search.svg") no-repeat 98% 80%;
-    background-size: 25px;
+    background: none;
     padding-left: 15px;
     border-radius: $brdr-radius;
     width: 50%;
     height: 30px;
-    border: none;
     border: 1px solid $primary-color;
+    @media #{$break-s} {
+      background: $color-white url("../icons/search.svg") no-repeat 98% 80%;
+      background-size: 25px;
+    }
   }
 }
