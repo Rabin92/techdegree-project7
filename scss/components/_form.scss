@@ -26,12 +26,12 @@ textarea {
     border-radius: $brdr-radius;
   }
   &-close {
-    @include flexy($j-content: space-between);
-    margin-bottom: 10px;
-    padding: 0.55em;
+    @include btn();
     background: green;
-    color: $color-white;
-    border-radius: $brdr-radius;
+  }
+  &-close-red {
+    @include btn();
+    background: red;
   }
 }
 

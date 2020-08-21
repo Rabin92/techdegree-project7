@@ -24,3 +24,12 @@
   grid-template-rows: $grid-row;
   grid-gap: $gutter;
 }
+
+// btn
+@mixin btn {
+  @include flexy($j-content: space-between);
+  margin-bottom: 10px;
+  padding: 0.55em;
+  color: $color-white;
+  border-radius: $brdr-radius;
+}

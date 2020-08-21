@@ -848,9 +848,18 @@ textarea {
   justify-content: space-between;
   margin-bottom: 10px;
   padding: 0.55em;
-  background: green;
   color: #fff;
   border-radius: 5px;
+  background: green;
+}
+.js-close-red {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 0.55em;
+  color: #fff;
+  border-radius: 5px;
+  background: red;
 }
 
 .members-section {

@@ -232,7 +232,7 @@ clearBtn.addEventListener("click", () => {
   }
 
   // Display message
-  alertMsg.innerHTML = `<p class="js-close">Settings restored to default!<span class="js-close-alert">&times;</span></p>`;
+  alertMsg.innerHTML = `<p class="js-close-red">Settings restored to default!<span class="js-close-alert">&times;</span></p>`;
 });
 
 // Click on 'x' to close settings alert message.
