@@ -1,8 +1,4 @@
 // Bell Icon
-.icon {
-  height: 25px;
-  padding-right: 10px;
-}
 
 @keyframes swing {
   0% {
@@ -22,8 +18,12 @@
   }
 }
 
-.icon:hover {
-  animation: swing 1s cubic-bezier(0.39, 0.575, 0.565, 1) backwards;
+.icon {
+  height: 25px;
+  padding-right: 10px;
+  &:hover {
+    animation: swing 1s cubic-bezier(0.39, 0.575, 0.565, 1) backwards;
+  }
 }
 
 // Notification red circle

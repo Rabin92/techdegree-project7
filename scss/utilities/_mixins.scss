@@ -1,0 +1,26 @@
+// Flex
+@mixin flexy(
+  $dsp: flex,
+  $dir: null,
+  $j-content: null,
+  $t-align: null,
+  $f-grow: null,
+  $align: null,
+  $a-self: null
+) {
+  display: $dsp;
+  flex-direction: $dir;
+  justify-content: $j-content;
+  align-content: $t-align;
+  flex-grow: $f-grow;
+  align-items: $align;
+  align-self: $a-self;
+}
+
+// Grid
+@mixin grid($dsp: grid, $grid-col: null, $grid-row: null, $gutter: null) {
+  display: $dsp;
+  grid-template-columns: $grid-col;
+  grid-template-rows: $grid-row;
+  grid-gap: $gutter;
+}

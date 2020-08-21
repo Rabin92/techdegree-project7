@@ -1,0 +1,27 @@
+/* ********************************* BUTTON ********************************* */
+
+.btn {
+  padding: 10px;
+  background: $btn-color;
+  border: none;
+  color: $color-white;
+  border-radius: $brdr-radius;
+  height: 45px;
+  &:hover {
+    background: lighten($btn-color, 8%);
+  }
+  &-1 {
+    @include flexy($dsp: null, $f-grow: 1);
+  }
+  &-2 {
+    @include flexy($dsp: null, $f-grow: 1);
+    background: rgba(56, 55, 55, 0.8);
+  }
+  &-1 + &-2 {
+    margin-left: 20px;
+  }
+}
+
+.setting-button {
+  @include flexy();
+}

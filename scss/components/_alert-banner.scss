@@ -2,13 +2,12 @@
 #js-alert {
   background: red;
   padding: 10px;
-  color: #fff;
-  border-radius: 5px;
+  color: $color-white;
+  border-radius: $brdr-radius;
   padding: 10px;
   margin: 0 0.6em;
 }
 
 .alert-banner {
-  display: flex;
-  justify-content: space-between;
+  @include flexy($j-content: space-between);
 }

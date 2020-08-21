@@ -6,11 +6,11 @@
   }
 
   .members-new {
-    display: flex;
+    @include flexy();
   }
 
   .members-new-info {
-    align-self: center;
+    @include flexy($dsp: null, $a-self: center);
   }
 
   .members-new > p,
@@ -28,8 +28,7 @@
   }
 
   .container-flex {
-    flex-direction: row;
-    justify-content: space-between;
+    @include flexy($dsp: null, $dir: row, $j-content: space-between);
     margin-bottom: initial;
   }
 
@@ -65,8 +64,7 @@
 
   /* nav */
   nav {
-    flex-direction: column;
-    justify-content: start;
+    @include flexy($dsp: null, $dir: column, $j-content: start);
     padding-top: 30px;
   }
   .icon-nav {
@@ -86,13 +84,13 @@
 
   /* Main Content Styles */
 
-  div.main-content {
+  .main-content {
+    @include grid($dsp: null, $gutter: 5px);
     grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 5px;
   }
 
   .social-stats-sec {
-    grid-gap: 25px;
+    @include grid($dsp: null, $gutter: 25px);
   }
 
   .chart-bar,

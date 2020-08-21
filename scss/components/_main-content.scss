@@ -14,7 +14,7 @@
   box-shadow: 1px 1px #888888;
 }
 
-div.social-stats > h2,
+.social-stats > h2,
 .members-section > h2,
 .container-flex > h2,
 .chart-bar > h2,
@@ -22,74 +22,66 @@ div.social-stats > h2,
   margin-bottom: 15px;
 }
 
-.text-center {
-  text-align: center;
+.text-center,
+.members-section {
+  text-align: $t-center;
 }
 
 .text-upper {
   text-transform: uppercase;
 }
 
-.members-section {
-  text-align: center;
-}
-
 main {
   grid-area: main;
 }
 
-div.main-content {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  grid-gap: 10px;
+.main-content {
+  @include grid($grid-col: 1fr, $grid-row: 1fr, $gutter: 10px);
 }
 
 .icon-social {
+  @include flexy();
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  display: flex;
   background: rgba(0, 0, 0, 0.8);
+  &-media {
+    height: 50px;
+    align-self: center;
+    padding: 10px 0 0 20px;
+  }
 }
 
-.icon-social-media {
-  height: 50px;
-  align-self: center;
-  padding: 10px 0 0 20px;
-}
-
-.social-stats-sec {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 5px;
-}
-
-.social-stats-info {
-  display: flex;
-  justify-content: center;
-  padding: 15px;
-  margin: 0.35em 0;
-  background: #f2f2f5;
-  border-radius: 5px;
+.social-stats {
+  &-sec {
+    @include grid($gutter: 5px);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  &-info {
+    @include flexy($j-content: center);
+    padding: 15px;
+    margin: 0.35em 0;
+    background: #f2f2f5;
+    border-radius: $brdr-radius;
+  }
 }
 
 .social-text {
   padding-left: 35px;
+  & > p {
+    font-size: 3em;
+  }
 }
 
-div.social-text > p {
-  font-size: 3em;
-}
-
-.members-img {
-  border-radius: 50%;
-  height: 55px;
-  border: 2px inset rgba(0, 0, 0, 0.8);
-}
-
-.members-new {
-  margin-bottom: 15px;
+.members {
+  &-img {
+    border-radius: 50%;
+    height: 55px;
+    border: 2px inset rgba(0, 0, 0, 0.8);
+  }
+  &-new {
+    margin-bottom: 15px;
+  }
 }
 
 .brdr-line {
@@ -115,19 +107,17 @@ div.social-text > p {
   display: inline-block;
   margin-right: 5px;
   padding: 5px;
-  border-radius: 5px;
+  border-radius: $brdr-radius;
   transition: color 0.3s, background-color 0.5s;
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.traffic-nav li:hover {
-  color: #fff;
-  background-color: darkgreen;
+  &:hover {
+    color: $color-white;
+    background-color: darkgreen;
+  }
 }
 
 .container-flex {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
+  @include flexy($dir: column);
+  text-align: $t-center;
   margin-bottom: 20px;
 }

@@ -1,9 +1,8 @@
 /* ******************************* NAV STYLES ******************************* */
 nav {
+  @include flexy($j-content: space-evenly);
   background: #1d1d1f;
   grid-area: nav;
-  display: flex;
-  justify-content: space-evenly;
   padding: 10px;
 }
 

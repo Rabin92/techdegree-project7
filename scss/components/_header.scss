@@ -1,14 +1,13 @@
 /* ****************************** HEADER STYLES ***************************** */
 header,
 .icon-name {
-  display: flex;
-  justify-content: space-between;
+  @include flexy($j-content: space-between);
   position: relative;
 }
 
 header {
   background: rgba(0, 0, 0, 0.8);
-  color: #fff;
+  color: $color-white;
   padding: 10px;
   grid-area: header;
 }
@@ -25,22 +24,20 @@ header {
   border: 2px inset rgb(127, 127, 127);
 }
 
-div.icon-name:last-child {
-  align-items: center;
-}
-
-.icon-name > p {
-  width: 80px;
+.icon-name {
+  &:last-child {
+    @include flexy($dsp: null, $align: center);
+  }
+  & > p {
+    width: 80px;
+  }
 }
 
 .dashboard {
-  display: grid;
-  grid-template-columns: 175px 1fr;
-  grid-template-rows: 45px;
-}
-
-.dashboard > h2 {
-  padding: 10px;
+  @include grid($grid-col: 175px 1fr, $grid-row: 45px);
+  & > h2 {
+    padding: 10px;
+  }
 }
 
 .input {
@@ -52,18 +49,17 @@ div.icon-name:last-child {
   border-right: 1px outset rgba(0, 0, 0, 0.8);
   border-radius: 2px;
   position: relative;
+  &-search {
+    background: $color-white url("../icons/search.svg") no-repeat 98% 80%;
+    background-size: 25px;
+  }
 }
 
 input[type="text"].input-search {
   padding-left: 15px;
-  border-radius: 5px;
+  border-radius: $brdr-radius;
   width: 50%;
   height: 30px;
   border: none;
   border: 1px solid rgba(0, 0, 0, 0.8);
-}
-
-.input-search {
-  background: #ffffff url("../icons/search.svg") no-repeat 98% 80%;
-  background-size: 25px;
 }

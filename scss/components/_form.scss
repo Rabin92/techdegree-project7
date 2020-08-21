@@ -1,47 +1,38 @@
 /* ********************************** FORM ********************************** */
-.form-user input[type="text"],
-textarea {
-  padding: 5px 0 5px 15px;
-  border-radius: 5px;
-  margin-bottom: 15px;
-  border: 1px solid black;
-  background: #f2f2f5;
-}
 
 .form-user input[type="text"] {
   height: 35px;
 }
 
-.btn {
-  padding: 10px;
-  background: rgba(0, 0, 0, 0.8);
-  border: none;
-  color: #fff;
-  border-radius: 5px;
-  height: 45px;
+.form-user input[type="text"],
+textarea {
+  padding: 5px 0 5px 15px;
+  border-radius: $brdr-radius;
+  margin-bottom: 15px;
+  border: 1px solid black;
+  background: #f2f2f5;
 }
 
 .form-user {
-  display: flex;
-  flex-direction: column;
+  @include flexy($dir: column);
 }
 
-.js-error {
-  margin-bottom: 10px;
-  padding: 0.35em;
-  background: red;
-  color: #fff;
-  border-radius: 5px;
-}
-
-.js-close {
-  margin-bottom: 10px;
-  padding: 0.55em;
-  background: green;
-  color: #fff;
-  border-radius: 5px;
-  display: flex;
-  justify-content: space-between;
+.js {
+  &-error {
+    margin-bottom: 10px;
+    padding: 0.35em;
+    background: red;
+    color: $color-white;
+    border-radius: $brdr-radius;
+  }
+  &-close {
+    @include flexy($j-content: space-between);
+    margin-bottom: 10px;
+    padding: 0.55em;
+    background: green;
+    color: $color-white;
+    border-radius: $brdr-radius;
+  }
 }
 
 .members-section {
@@ -51,19 +42,15 @@ textarea {
 #js-list-names > ul {
   margin-bottom: 5px;
   position: absolute;
-  border-radius: 5px;
+  border-radius: $brdr-radius;
   box-shadow: 4px 6px 0 rgba(32, 33, 36, 0.28);
-  background-color: #fff;
+  background-color: $color-white;
   top: 90px;
   width: 95%;
-}
-
-#js-list-names > ul > li {
-  padding: 5px;
-
-  cursor: pointer;
-}
-
-#js-list-names > ul > li:hover {
-  background-color: lightgrey;
+  & > li {
+    padding: 5px;
+  }
+  & > li:hover {
+    background-color: lightgrey;
+  }
 }
