@@ -4,6 +4,10 @@
 }
 
 .notifications-message {
+  @media #{$break-s} {
+    width: 230px;
+    right: -2px;
+  }
   position: absolute;
   top: 25px;
   width: 180px;

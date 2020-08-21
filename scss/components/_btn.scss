@@ -2,13 +2,14 @@
 
 .btn {
   padding: 10px;
-  background: $btn-color;
+  background: $primary-color;
   border: none;
   color: $color-white;
   border-radius: $brdr-radius;
   height: 45px;
+  transition: background 1s ease-in-out;
   &:hover {
-    background: lighten($btn-color, 8%);
+    background: lighten($primary-color, 9%);
   }
   &-1 {
     @include flexy($dsp: null, $f-grow: 1);

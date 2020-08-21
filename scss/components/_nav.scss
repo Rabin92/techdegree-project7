@@ -1,11 +1,18 @@
 /* ******************************* NAV STYLES ******************************* */
 nav {
   @include flexy($j-content: space-evenly);
+  @media #{$break-m} {
+    @include flexy($dsp: null, $dir: column, $j-content: start);
+    padding-top: 30px;
+  }
   background: #1d1d1f;
   grid-area: nav;
   padding: 10px;
 }
 
 .icon-nav {
+  @media #{$break-m} {
+    margin-bottom: 30px;
+  }
   height: 30px;
 }

@@ -13,10 +13,24 @@ body {
 }
 
 .wrap {
+  @media #{$break-m} {
+    width: 90%;
+    margin: 0 auto;
+  }
+  @media #{$break-xl} {
+    max-width: 1400px;
+  }
   background: #fff;
 }
 
 .container-grid {
+  @media #{$break-m} {
+    grid-template-columns: minmax(55px, 60px);
+    grid-template-areas:
+      "header header"
+      "nav main"
+      "nav main";
+  }
   display: grid;
   grid-template-rows: repeat(2, 50px);
   grid-template-areas:

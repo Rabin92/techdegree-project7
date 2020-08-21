@@ -7,6 +7,9 @@
 
 .switch-light {
   width: 30%;
+  @media #{$break-s} {
+    width: 60%;
+  }
 }
 
 .setting-timezone {
