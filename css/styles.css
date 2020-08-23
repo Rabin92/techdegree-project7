@@ -384,14 +384,10 @@ body {
 .wrap {
   background: #fff;
 }
-@media (min-width: 768px) {
+@media (min-width: 1680px) {
   .wrap {
     width: 90%;
     margin: 0 auto;
-  }
-}
-@media (min-width: 1024px) {
-  .wrap {
     max-width: 1400px;
   }
 }
@@ -751,7 +747,7 @@ main {
     grid-column: 1/3;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 850px) {
   /* Main Content Styles */
   .chart-bar,
 .chart-donut {

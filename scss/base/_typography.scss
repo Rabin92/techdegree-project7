@@ -13,11 +13,9 @@ body {
 }
 
 .wrap {
-  @media #{$break-m} {
+  @media #{$break-xl} {
     width: 90%;
     margin: 0 auto;
-  }
-  @media #{$break-xl} {
     max-width: 1400px;
   }
   background: #fff;
