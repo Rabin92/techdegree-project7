@@ -6,10 +6,15 @@ header,
 }
 
 header {
-  @include fixed;
   @media #{$break-m} {
-    position: initial;
+    position: static;
+    width: auto;
+    z-index: auto;
   }
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  z-index: 2;
   background: rgba(0, 0, 0, 0.8);
   color: $color-white;
   padding: 10px;

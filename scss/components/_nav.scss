@@ -4,10 +4,13 @@ nav {
   @media #{$break-m} {
     @include flexy($dsp: null, $dir: column, $j-content: start);
     padding-top: 30px;
-    position: initial;
+    position: static;
+    width: auto;
+    z-index: auto;
   }
-
-  @include fixed;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  z-index: 1;
   top: 47px;
   background: #1d1d1f;
   grid-area: nav;

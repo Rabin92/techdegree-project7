@@ -431,9 +431,11 @@ header,
 }
 
 header {
-  position: fixed;
-  width: 100%;
-  z-index: 1;
+  position: -webkit-sticky;
+  /* Safari */
+  position: sticky;
+  top: 0;
+  z-index: 2;
   background: rgba(0, 0, 0, 0.8);
   color: #fff;
   padding: 10px;
@@ -441,7 +443,9 @@ header {
 }
 @media (min-width: 768px) {
   header {
-    position: initial;
+    position: static;
+    width: auto;
+    z-index: auto;
   }
 }
 
@@ -549,8 +553,9 @@ header {
 nav {
   display: flex;
   justify-content: space-evenly;
-  position: fixed;
-  width: 100%;
+  position: -webkit-sticky;
+  /* Safari */
+  position: sticky;
   z-index: 1;
   top: 47px;
   background: #1d1d1f;
@@ -562,7 +567,9 @@ nav {
     flex-direction: column;
     justify-content: start;
     padding-top: 30px;
-    position: initial;
+    position: static;
+    width: auto;
+    z-index: auto;
   }
 }
 
@@ -799,10 +806,10 @@ main {
 .notifications-message {
   position: absolute;
   top: 25px;
+  z-index: 1;
   width: 180px;
   right: -85px;
   color: #fff;
-  z-index: 1000;
   opacity: 0.95;
   border-radius: 5px;
 }
