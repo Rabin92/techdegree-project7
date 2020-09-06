@@ -431,10 +431,18 @@ header,
 }
 
 header {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
   background: rgba(0, 0, 0, 0.8);
   color: #fff;
   padding: 10px;
   grid-area: header;
+}
+@media (min-width: 768px) {
+  header {
+    position: initial;
+  }
 }
 
 .border {
@@ -541,6 +549,10 @@ header {
 nav {
   display: flex;
   justify-content: space-evenly;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  top: 47px;
   background: #1d1d1f;
   grid-area: nav;
   padding: 10px;
@@ -550,6 +562,7 @@ nav {
     flex-direction: column;
     justify-content: start;
     padding-top: 30px;
+    position: initial;
   }
 }
 

@@ -33,3 +33,10 @@
   color: $color-white;
   border-radius: $brdr-radius;
 }
+
+// header & nav position
+@mixin fixed {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}

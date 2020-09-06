@@ -6,6 +6,10 @@ header,
 }
 
 header {
+  @include fixed;
+  @media #{$break-m} {
+    position: initial;
+  }
   background: rgba(0, 0, 0, 0.8);
   color: $color-white;
   padding: 10px;

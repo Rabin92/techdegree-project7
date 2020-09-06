@@ -4,7 +4,11 @@ nav {
   @media #{$break-m} {
     @include flexy($dsp: null, $dir: column, $j-content: start);
     padding-top: 30px;
+    position: initial;
   }
+
+  @include fixed;
+  top: 47px;
   background: #1d1d1f;
   grid-area: nav;
   padding: 10px;
