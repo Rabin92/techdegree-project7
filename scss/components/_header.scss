@@ -7,9 +7,8 @@ header,
 
 header {
   @media #{$break-m} {
-    position: static;
-    width: auto;
-    z-index: auto;
+    position: sticky;
+    top: 0;
   }
   position: -webkit-sticky; /* Safari */
   position: sticky;

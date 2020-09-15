@@ -443,9 +443,8 @@ header {
 }
 @media (min-width: 768px) {
   header {
-    position: static;
-    width: auto;
-    z-index: auto;
+    position: sticky;
+    top: 0;
   }
 }
 
@@ -567,9 +566,8 @@ nav {
     flex-direction: column;
     justify-content: start;
     padding-top: 30px;
-    position: static;
-    width: auto;
-    z-index: auto;
+    position: sticky;
+    height: 100vh;
   }
 }
 

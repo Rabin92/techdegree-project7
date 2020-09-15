@@ -4,9 +4,8 @@ nav {
   @media #{$break-m} {
     @include flexy($dsp: null, $dir: column, $j-content: start);
     padding-top: 30px;
-    position: static;
-    width: auto;
-    z-index: auto;
+    position: sticky;
+    height: 100vh;
   }
   position: -webkit-sticky; /* Safari */
   position: sticky;
