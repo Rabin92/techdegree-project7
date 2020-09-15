@@ -3,7 +3,7 @@ nav {
   @include flexy($j-content: space-evenly);
   @media #{$break-m} {
     @include flexy($dsp: null, $dir: column, $j-content: start);
-    padding-top: 30px;
+    padding-top: 60px;
     position: sticky;
     height: 100vh;
   }
