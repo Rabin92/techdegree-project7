@@ -141,9 +141,7 @@ const displayMatchedNames = () => {
 };
 
 // Call displayMatchedNames function
-userName.addEventListener("input", () => {
-  displayMatchedNames();
-});
+userName.addEventListener("input", displayMatchedNames);
 
 // Place the selected name in the input field
 listNames.addEventListener("click", (e) => {
