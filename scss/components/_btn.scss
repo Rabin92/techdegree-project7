@@ -7,9 +7,11 @@
   color: $color-white;
   border-radius: $brdr-radius;
   height: 45px;
-  transition: background 1s ease-in-out;
-  &:hover {
-    background: lighten($primary-color, 9%);
+  box-shadow: 0 4px #999;
+  &:active {
+    background: lighten($primary-color, 5%);
+    box-shadow: 0 4px #666;
+    transform: translateY(4px);
   }
   &-1 {
     @include flexy($dsp: null, $f-grow: 1);
