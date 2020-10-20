@@ -58,6 +58,7 @@ header {
   border-right: 1px outset $primary-color;
   border-radius: 2px;
   position: relative;
+  padding-bottom: 50px;
   &-search {
     padding-left: 15px;
     border-radius: $brdr-radius;
@@ -65,8 +66,9 @@ header {
     height: 30px;
     border: 1px solid $primary-color;
     @media #{$break-s} {
-      background: $color-white url("../icons/search.svg") no-repeat 98% 80%;
+      background: $color-white url('../icons/search.svg') no-repeat 98% 80%;
       background-size: 25px;
+      margin-top: 5px;
     }
   }
 }
