@@ -418,7 +418,8 @@ select,
 #js-icon-bell,
 .js-close-notification,
 .js-close-alert,
-#js-list-names > ul > li {
+#js-list-names > ul > li,
+.clear-not {
   cursor: pointer;
 }
 
@@ -484,6 +485,7 @@ header {
   border-right: 1px outset rgba(0, 0, 0, 0.8);
   border-radius: 2px;
   position: relative;
+  padding-bottom: 50px;
 }
 .input-search {
   padding-left: 15px;
@@ -496,6 +498,7 @@ header {
   .input-search {
     background: #fff url("../icons/search.svg") no-repeat 98% 80%;
     background-size: 25px;
+    margin-top: 5px;
   }
 }
 
@@ -704,6 +707,11 @@ main {
   padding: 10px;
 }
 
+.chart-bar,
+.chart-donut {
+  margin-top: 20px;
+}
+
 .widget-container {
   height: 280px;
 }
@@ -741,7 +749,7 @@ main {
   .container-flex {
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: initial;
+    margin: 20px 0;
   }
 }
 
@@ -783,7 +791,7 @@ main {
   color: #fff;
   border-radius: 5px;
   padding: 10px;
-  margin: 0 0.6em;
+  margin: 25px 0.85em 1px 0.85em;
 }
 @media (min-width: 640px) {
   #js-alert {
@@ -791,9 +799,23 @@ main {
   }
 }
 
+.close {
+  opacity: 1;
+  transition: opacity 0.6s ease-in-out;
+}
+
 .alert-banner {
   display: flex;
   justify-content: space-between;
+}
+.alert-banner-close {
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 20px;
+  transition: 0.3s;
+}
+.alert-banner-close:hover {
+  color: rgba(0, 0, 0, 0.8);
 }
 
 /* ***************************** ALERT NOTIFICATIONS **************************** */
@@ -821,7 +843,8 @@ main {
   display: flex;
   justify-content: space-around;
   padding: 10px;
-  background: green;
+  background: darkslategray;
+  border-radius: 5px;
   border-bottom: 1px solid grey;
 }
 .notifications-message ul li:last-child {
@@ -832,6 +855,16 @@ main {
   height: 25px;
   padding-right: 10px;
   border-radius: 50%;
+}
+
+#js-notifications {
+  display: none;
+}
+
+ul li.clear-not {
+  background: lightslategrey;
+  margin-top: 5px;
+  font-weight: bolder;
 }
 
 /* ********************************** FORM ********************************** */
@@ -881,6 +914,11 @@ textarea {
 
 .members-section {
   position: relative;
+  margin-top: 20px;
+}
+
+#js-list-names {
+  position: relative;
 }
 
 #js-list-names > ul {
@@ -889,8 +927,7 @@ textarea {
   border-radius: 5px;
   box-shadow: 4px 6px 0 rgba(32, 33, 36, 0.28);
   background-color: #fff;
-  top: 90px;
-  width: 95%;
+  width: 100%;
 }
 #js-list-names > ul > li {
   padding: 5px;
