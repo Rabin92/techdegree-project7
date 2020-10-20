@@ -58,7 +58,7 @@ const alertBanner = document.querySelector('#js-alert');
 
 alertBanner.innerHTML = `
   <div class="alert-banner">
-  <p><strong>Alert:</strong> You have <strong>6</strong> overdue tasks to complete.</p>
+  <p>Alert: You have 6 overdue tasks to complete.</p>
   <p class="alert-banner-close">&times;</p>
   </div>
 `;
@@ -101,7 +101,7 @@ form.addEventListener('click', e => {
       border(userMsg, '1px solid black');
     }
     if (userName.value !== '' && userMsg.value !== '') {
-      success.innerHTML = `<p class="js-close">Message successfully sent to: ${userName.value}<span class="js-close-alert">&times;</span></p>`;
+      success.innerHTML = `<p class="js-close">Message successfully sent to - ${userName.value}<span class="js-close-alert">&times;</span></p>`;
     } else {
       success.innerHTML = '';
     }
