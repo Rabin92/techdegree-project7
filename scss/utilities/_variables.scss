@@ -7,9 +7,10 @@ $brdr-radius: 5px;
 $cursor: pointer;
 
 $t-center: center;
+$margin-top: 20px;
 
 // Breakpoints
-$break-s: "(min-width: 640px)";
-$break-m: "(min-width: 768px)";
-$break-l: "(min-width: 850px)";
-$break-xl: "(min-width: 1680px)";
+$break-s: '(min-width: 640px)';
+$break-m: '(min-width: 768px)';
+$break-l: '(min-width: 850px)';
+$break-xl: '(min-width: 1680px)';
