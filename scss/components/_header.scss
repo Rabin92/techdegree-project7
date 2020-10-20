@@ -18,6 +18,10 @@ header {
   color: $color-white;
   padding: 10px;
   grid-area: header;
+  h3 {
+    letter-spacing: 0.246em;
+    line-height: 32px;
+  }
 }
 
 .border {
