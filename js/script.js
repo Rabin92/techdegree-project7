@@ -111,6 +111,7 @@ form.addEventListener('click', e => {
 // Click on 'x' to close success alert message.
 document.querySelector('#js-form').addEventListener('click', e => {
   const theTarget = e.target;
+
   if (theTarget.tagName === 'SPAN') {
     theTarget.parentNode.remove();
   }
@@ -201,7 +202,9 @@ saveBtn.addEventListener('click', () => {
   localStorage.setItem('timezone', timeZone.selectedIndex);
 
   // Display message
-  alertMsg.innerHTML = `<p class="js-close">Settings successfully saved!<span class="js-close-alert">&times;</span></p>`;
+  alertMsg.innerHTML = `
+  <p class="js-close">Settings successfully saved!<span class="js-close-alert">&times;</span></p>
+  `;
 });
 
 /* 
@@ -249,11 +252,13 @@ clearBtn.addEventListener('click', () => {
   }
 
   // Display message
-  alertMsg.innerHTML = `<p class="js-close-red">Settings restored to default!<span class="js-close-alert">&times;</span></p>`;
+  alertMsg.innerHTML = `
+  <p class="js-close-red">Settings restored to default!<span class="js-close-alert">&times;</span></p>
+  `;
 });
 
 // Click on 'x' to close settings alert message.
-document.querySelector('.close').addEventListener('click', e => {
+document.querySelector('#js-alert-msg').addEventListener('click', e => {
   const theTarget = e.target;
   if (theTarget.className === 'js-close-alert') {
     theTarget.parentNode.remove();
