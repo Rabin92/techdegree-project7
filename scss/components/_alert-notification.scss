@@ -22,6 +22,7 @@
     background: darkslategray;
     border-radius: 5px;
     border-bottom: 1px solid grey;
+    align-items: flex-start;
   }
   & ul li:last-child {
     border-bottom: none;
@@ -42,4 +43,11 @@ ul li.clear-not {
   background: lightslategrey;
   margin-top: 5px;
   font-weight: bolder;
+}
+
+.js-close-notification {
+  @include closeBtn;
+  &:hover {
+    background-color: $primary-color;
+  }
 }
