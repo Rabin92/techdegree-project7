@@ -598,7 +598,6 @@ nav {
 /* Section border */
 .add-border {
   border: 1px solid #cecbcb;
-  box-shadow: 1px 1px #888888;
 }
 @media (min-width: 768px) {
   .add-border {
@@ -959,6 +958,7 @@ textarea {
 .members-section {
   position: relative;
   margin-top: 20px;
+  padding-bottom: 25px;
 }
 
 #js-list-names {
@@ -988,10 +988,12 @@ textarea {
   color: #fff;
   border-radius: 5px;
   height: 45px;
-  transition: background 1s ease-in-out;
+  box-shadow: 0 4px #999;
 }
-.btn:hover {
-  background: rgba(23, 23, 23, 0.8);
+.btn:active {
+  background: rgba(13, 13, 13, 0.8);
+  box-shadow: 0 4px #666;
+  transform: translateY(4px);
 }
 .btn-1 {
   flex-grow: 1;
