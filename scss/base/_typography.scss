@@ -1,15 +1,14 @@
 /* ******************************* BASE STYLES ****************************** */
 // Google Fonts
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Mitr:wght@300&display=swap');
 * {
   box-sizing: border-box;
 }
 
 body {
   font-size: 1em;
-  font-family: "Lato", sans-serif;
   background: #f2f2f3;
+  font-family: 'Mitr', sans-serif;
 }
 
 .wrap {
@@ -25,16 +24,16 @@ body {
   @media #{$break-m} {
     grid-template-columns: minmax(55px, 60px);
     grid-template-areas:
-      "header header"
-      "nav main"
-      "nav main";
+      'header header'
+      'nav main'
+      'nav main';
   }
   display: grid;
   grid-template-rows: repeat(2, 50px);
   grid-template-areas:
-    "header"
-    "nav"
-    "main";
+    'header'
+    'nav'
+    'main';
 }
 main {
   padding-bottom: 40px;
