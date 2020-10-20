@@ -19,7 +19,8 @@
   & ul li {
     @include flexy($j-content: space-around);
     padding: 10px;
-    background: green;
+    background: darkslategray;
+    border-radius: 5px;
     border-bottom: 1px solid grey;
   }
   & ul li:last-child {
@@ -31,4 +32,14 @@
   height: 25px;
   padding-right: 10px;
   border-radius: 50%;
+}
+
+#js-notifications {
+  display: none;
+}
+
+ul li.clear-not {
+  background: lightslategrey;
+  margin-top: 5px;
+  font-weight: bolder;
 }
