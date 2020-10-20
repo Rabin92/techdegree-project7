@@ -8,6 +8,7 @@ select,
 #js-icon-bell,
 .js-close-notification,
 .js-close-alert,
-#js-list-names > ul > li {
+#js-list-names > ul > li,
+.clear-not {
   cursor: $cursor;
 }
