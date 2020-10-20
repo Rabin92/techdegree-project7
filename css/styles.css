@@ -5,7 +5,7 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mitr:wght@300&display=swap");
 html {
   line-height: 1.15;
   /* 1 */
@@ -377,8 +377,8 @@ button {
 
 body {
   font-size: 1em;
-  font-family: "Lato", sans-serif;
   background: #f2f2f3;
+  font-family: "Mitr", sans-serif;
 }
 
 .wrap {
@@ -447,6 +447,10 @@ header {
     position: sticky;
     top: 0;
   }
+}
+header h3 {
+  letter-spacing: 0.246em;
+  line-height: 32px;
 }
 
 .border {
@@ -792,6 +796,8 @@ main {
   border-radius: 5px;
   padding: 10px;
   margin: 25px 0.85em 1px 0.85em;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
 }
 @media (min-width: 640px) {
   #js-alert {
@@ -807,15 +813,20 @@ main {
 .alert-banner {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 600;
 }
 .alert-banner-close {
   font-weight: bold;
   font-size: 30px;
   line-height: 20px;
   transition: 0.3s;
+  padding: 5px;
+  border-radius: 5px;
 }
 .alert-banner-close:hover {
-  color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .js-close-alert {
@@ -823,9 +834,11 @@ main {
   font-size: 30px;
   line-height: 20px;
   transition: 0.3s;
+  padding: 5px;
+  border-radius: 5px;
 }
 .js-close-alert:hover {
-  color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* ***************************** ALERT NOTIFICATIONS **************************** */
@@ -856,6 +869,7 @@ main {
   background: darkslategray;
   border-radius: 5px;
   border-bottom: 1px solid grey;
+  align-items: flex-start;
 }
 .notifications-message ul li:last-child {
   border-bottom: none;
@@ -875,6 +889,18 @@ ul li.clear-not {
   background: lightslategrey;
   margin-top: 5px;
   font-weight: bolder;
+}
+
+.js-close-notification {
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 20px;
+  transition: 0.3s;
+  padding: 5px;
+  border-radius: 5px;
+}
+.js-close-notification:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* ********************************** FORM ********************************** */
@@ -905,14 +931,20 @@ textarea {
 }
 .js-close {
   display: flex;
+  align-items: center;
+  display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
   padding: 0.55em;
   color: #fff;
   border-radius: 5px;
   background: green;
+  font-size: 17px;
+  font-weight: 600;
 }
 .js-close-red {
+  display: flex;
+  align-items: center;
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
@@ -920,6 +952,8 @@ textarea {
   color: #fff;
   border-radius: 5px;
   background: red;
+  font-size: 17px;
+  font-weight: 600;
 }
 
 .members-section {
