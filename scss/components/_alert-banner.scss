@@ -9,6 +9,8 @@
   border-radius: $brdr-radius;
   padding: 10px;
   margin: 25px 0.85em 1px 0.85em;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
 }
 
 .close {
@@ -17,18 +19,20 @@
 }
 
 .alert-banner {
-  @include flexy($j-content: space-between);
+  @include flexy($j-content: space-between, $align: center);
+  font-size: 17px;
+  font-weight: 600;
   &-close {
     @include closeBtn;
   }
   &-close:hover {
-    color: $primary-color;
+    background-color: $primary-color;
   }
 }
 
 .js-close-alert {
   @include closeBtn;
   &:hover {
-    color: $primary-color;
+    background-color: $primary-color;
   }
 }
