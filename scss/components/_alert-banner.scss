@@ -19,12 +19,16 @@
 .alert-banner {
   @include flexy($j-content: space-between);
   &-close {
-    font-weight: bold;
-    font-size: 30px;
-    line-height: 20px;
-    transition: 0.3s;
+    @include closeBtn;
   }
   &-close:hover {
+    color: $primary-color;
+  }
+}
+
+.js-close-alert {
+  @include closeBtn;
+  &:hover {
     color: $primary-color;
   }
 }
