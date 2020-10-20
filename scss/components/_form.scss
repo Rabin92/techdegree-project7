@@ -26,12 +26,18 @@ textarea {
     border-radius: $brdr-radius;
   }
   &-close {
+    @include flexy($align: center);
     @include btn();
     background: green;
+    font-size: 17px;
+    font-weight: 600;
   }
   &-close-red {
+    @include flexy($align: center);
     @include btn();
     background: red;
+    font-size: 17px;
+    font-weight: 600;
   }
 }
 
