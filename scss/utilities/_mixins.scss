@@ -33,3 +33,10 @@
   color: $color-white;
   border-radius: $brdr-radius;
 }
+
+@mixin closeBtn {
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 20px;
+  transition: 0.3s;
+}
