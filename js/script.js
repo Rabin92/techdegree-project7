@@ -16,10 +16,10 @@ const opacity = (element, style) => (element.style.opacity = style);
 
 // Adding click event on a Bell icon
 iconBell.addEventListener('click', () => {
-  if (notifications.style.display === 'none') {
-    display(notifications, 'block');
-  } else {
+  if (notifications.style.display === 'block') {
     display(notifications, 'none');
+  } else {
+    display(notifications, 'block');
   }
 });
 
