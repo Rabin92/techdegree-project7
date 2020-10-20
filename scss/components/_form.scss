@@ -1,10 +1,10 @@
 /* ********************************** FORM ********************************** */
 
-.form-user input[type="text"] {
+.form-user input[type='text'] {
   height: 35px;
 }
 
-.form-user input[type="text"],
+.form-user input[type='text'],
 textarea {
   padding: 5px 0 5px 15px;
   border-radius: $brdr-radius;
@@ -37,6 +37,11 @@ textarea {
 
 .members-section {
   position: relative;
+  margin-top: $margin-top;
+}
+
+#js-list-names {
+  position: relative;
 }
 
 #js-list-names > ul {
@@ -45,8 +50,7 @@ textarea {
   border-radius: $brdr-radius;
   box-shadow: 4px 6px 0 rgba(32, 33, 36, 0.28);
   background-color: $color-white;
-  top: 90px;
-  width: 95%;
+  width: 100%;
   & > li {
     padding: 5px;
   }
