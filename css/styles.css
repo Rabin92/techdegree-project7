@@ -376,9 +376,8 @@ button {
 }
 
 body {
-  font-size: 1em;
   background: #f2f2f3;
-  font-family: "Mitr", sans-serif;
+  font: 1em/1.5 "Mitr", sans-serif;
 }
 
 .wrap {
