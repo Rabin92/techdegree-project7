@@ -7,11 +7,9 @@ const notificationsMsg = document.querySelector('#js-notifications-msg ul')
 const clearAll = document.querySelector('#js-notifications-msg').children;
 const removeNotifications = document.querySelector('.clear-not');
 
-// Display
+// Reusable Function
 const display = (element, style) => (element.style.display = style);
-// Border
 const border = (element, style) => (element.style.border = style);
-// Opacity
 const opacity = (element, style) => (element.style.opacity = style);
 
 // Adding click event on a Bell icon
