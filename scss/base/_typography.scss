@@ -1,14 +1,14 @@
 /* ******************************* BASE STYLES ****************************** */
 // Google Fonts
 @import url('https://fonts.googleapis.com/css2?family=Mitr:wght@300&display=swap');
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-size: 1em;
   background: #f2f2f3;
-  font-family: 'Mitr', sans-serif;
+  font: 1em/1.5 'Mitr', sans-serif;
 }
 
 .wrap {
