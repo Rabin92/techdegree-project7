@@ -852,7 +852,7 @@ main {
   z-index: 1;
   color: #fff;
 }
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   .notifications-message {
     position: absolute;
     top: 25px;
