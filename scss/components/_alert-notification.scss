@@ -11,7 +11,7 @@
   z-index: 1;
   color: $color-white;
 
-  @media #{$break-m} {
+  @media #{$break-s} {
     position: absolute;
     top: 25px;
     width: 300px;
