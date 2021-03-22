@@ -1,5 +1,5 @@
 /* ****************************** CHART UPDATE ****************************** */
-const trafficNav = document.querySelector("#js-traffic-nav");
+const trafficNav = document.querySelector('#js-traffic-nav');
 
 const chartHourly = () => {
   lineCharts.data.datasets[0].data = [
@@ -16,7 +16,7 @@ const chartHourly = () => {
     1200,
     1000,
   ];
-  lineCharts.data.datasets[0].borderColor = ["#000"];
+  lineCharts.data.datasets[0].backgroundColor = ['rgba(77, 175, 124, .5)'];
   lineCharts.update();
 };
 
@@ -35,7 +35,7 @@ const chartDaily = () => {
     1300,
     900,
   ];
-  lineCharts.data.datasets[0].borderColor = ["grey"];
+  lineCharts.data.datasets[0].backgroundColor = ['rgba(142, 68, 173, .5)'];
   lineCharts.update();
 };
 
@@ -54,7 +54,7 @@ const chartWeekly = () => {
     1900,
     2500,
   ];
-  lineCharts.data.datasets[0].borderColor = ["darkgreen"];
+  lineCharts.data.datasets[0].backgroundColor = ['rgba(207, 0, 15, .5)'];
   lineCharts.update();
 };
 
@@ -73,7 +73,7 @@ const chartMonthly = () => {
     1400,
     2500,
   ];
-  lineCharts.data.datasets[0].borderColor = ["purple"];
+  lineCharts.data.datasets[0].backgroundColor = ['rgba(108, 122, 137, .5)'];
   lineCharts.update();
 };
 
@@ -82,15 +82,15 @@ const chartMonthly = () => {
    If the 'id' matches, apply the call function to update the chart data
 */
 
-trafficNav.addEventListener("click", (e) => {
+trafficNav.addEventListener('click', e => {
   const theTarget = e.target;
-  if (theTarget.id === "js-hourly") {
+  if (theTarget.id === 'js-hourly') {
     chartHourly();
-  } else if (theTarget.id === "js-daily") {
+  } else if (theTarget.id === 'js-daily') {
     chartDaily();
-  } else if (theTarget.id === "js-weekly") {
+  } else if (theTarget.id === 'js-weekly') {
     chartWeekly();
-  } else if (theTarget.id === "js-monthly") {
+  } else if (theTarget.id === 'js-monthly') {
     chartMonthly();
   }
 });
