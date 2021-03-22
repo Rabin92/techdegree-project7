@@ -404,8 +404,13 @@ body {
 }
 
 main {
-  padding: 1em 0 40px;
+  padding-top: 2.8em;
   margin-left: 1.5em;
+}
+@media (min-width: 768px) {
+  main {
+    padding: 1em 0 40px;
+  }
 }
 
 /* ********************************* CURSOR ********************************* */
@@ -437,7 +442,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 2;
-  background: rgba(0, 0, 0, 0.8);
+  background: #1c2225;
   color: #fff;
   padding: 10px;
   grid-area: header;
@@ -567,7 +572,7 @@ nav {
   position: sticky;
   z-index: 1;
   top: 64px;
-  background: #1d1d1f;
+  background: #363941;
   grid-area: nav;
   padding: 2.5em;
 }
