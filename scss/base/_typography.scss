@@ -36,6 +36,10 @@ body {
     'main';
 }
 main {
-  padding: 1em 0 40px;
+  padding-top: 2.8em;
   margin-left: 1.5em;
+
+  @media #{$break-m} {
+    padding: 1em 0 40px;
+  }
 }
