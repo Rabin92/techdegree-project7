@@ -55,6 +55,15 @@ main {
     height: 50px;
     padding: 10px 0 0 20px;
   }
+  &-twitter {
+    background-color: $twitter--col;
+  }
+  &-facebook {
+    background-color: $facebook--col;
+  }
+  &-google {
+    background-color: $googlePlus--col;
+  }
 }
 
 .social-stats {
@@ -66,7 +75,7 @@ main {
     }
   }
   &-info {
-    @include flexy($j-content: center);
+    @include flexy($j-content: center, $align: center);
     padding: 15px;
     margin: 0.35em 0;
     background: #f2f2f5;
