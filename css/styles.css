@@ -405,11 +405,11 @@ body {
 
 main {
   padding-top: 2.8em;
-  margin-left: 1.5em;
 }
 @media (min-width: 768px) {
   main {
     padding: 1em 0 40px;
+    margin-left: 0.5em;
   }
 }
 
@@ -446,7 +446,7 @@ header {
   color: #fff;
   padding: 10px;
   grid-area: header;
-  padding: 2em;
+  padding: 2em 0;
   align-items: center;
 }
 @media (min-width: 768px) {
@@ -574,7 +574,7 @@ nav {
   top: 64px;
   background: #363941;
   grid-area: nav;
-  padding: 2.5em;
+  padding: 2.5em 0;
 }
 @media (min-width: 768px) {
   nav {
