@@ -1,19 +1,18 @@
 /* ******************************* NAV STYLES ******************************* */
 nav {
-  @include flexy($j-content: space-evenly);
+  @include flexy($j-content: space-evenly, $align: center);
   @media #{$break-m} {
-    @include flexy($dsp: null, $dir: column, $j-content: start);
-    padding-top: 60px;
+    @include flexy($dir: column);
     position: sticky;
     height: 100vh;
   }
   position: -webkit-sticky; /* Safari */
   position: sticky;
   z-index: 1;
-  top: 47px;
+  top: 64px;
   background: #1d1d1f;
   grid-area: nav;
-  padding: 10px;
+  padding: 2.5em;
 }
 
 .icon-nav {
