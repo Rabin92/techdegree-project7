@@ -10,7 +10,7 @@ nav {
   position: sticky;
   z-index: 1;
   top: 64px;
-  background: #1d1d1f;
+  background: $nav--bck-col;
   grid-area: nav;
   padding: 2.5em;
 }
