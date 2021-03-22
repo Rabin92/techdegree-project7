@@ -650,6 +650,15 @@ main {
   height: 50px;
   padding: 10px 0 0 20px;
 }
+.icon-social-twitter {
+  background-color: #00acee;
+}
+.icon-social-facebook {
+  background-color: #3b5998;
+}
+.icon-social-google {
+  background-color: #db4a39;
+}
 
 .social-stats-sec {
   display: grid;
@@ -664,6 +673,7 @@ main {
 .social-stats-info {
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 15px;
   margin: 0.35em 0;
   background: #f2f2f5;
@@ -788,14 +798,12 @@ main {
 }
 /* ****************************** ALERT BANNER ****************************** */
 #js-alert {
-  background: red;
+  background: #ff0000;
   padding: 10px;
   color: #fff;
   border-radius: 5px;
   padding: 10px;
   margin: 25px 0.85em 1px 0.85em;
-  border-left: 2px solid black;
-  border-right: 2px solid black;
 }
 @media (min-width: 640px) {
   #js-alert {
