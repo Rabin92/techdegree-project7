@@ -10,6 +10,7 @@ header {
     position: sticky;
     top: 0;
   }
+
   position: -webkit-sticky; /* Safari */
   position: sticky;
   top: 0;
@@ -18,6 +19,8 @@ header {
   color: $color-white;
   padding: 10px;
   grid-area: header;
+  padding: 2em;
+  align-items: center;
   h3 {
     letter-spacing: 0.246em;
     line-height: 32px;
