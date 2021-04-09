@@ -141,15 +141,9 @@ main {
 
 .traffic-nav li {
   display: inline-block;
-  margin-right: 5px;
-  padding: 5px;
+  padding: 0.45em 0.75em;
   border-radius: $brdr-radius;
-  transition: color 0.3s, background-color 0.5s;
-  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  &:hover {
-    color: $color-white;
-    background-color: darkgreen;
-  }
+  transition: all 400ms ease-in-out;
 }
 
 .container-flex {
@@ -160,6 +154,11 @@ main {
   @include flexy($dir: column);
   text-align: $t-center;
   margin-bottom: 20px;
+}
+
+.active {
+  color: $color-white;
+  background-color: darkgreen;
 }
 
 // Breakpoints
