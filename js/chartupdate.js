@@ -93,6 +93,8 @@ const updateChart = [
   },
 ];
 
+updateChart[0].data();
+
 /*
    Add event listener to the parent element of <li> tags
 */
