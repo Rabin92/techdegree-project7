@@ -25,24 +25,9 @@ let lineCharts = new Chart(lineChart, {
 
     datasets: [
       {
-        backgroundColor: 'rgba(0, 0, 0, 0.1)',
         pointBorderColor: '#ff6666',
         pointBackgroundColor: '#fff',
         pointBorderWidth: '4',
-        data: [
-          750,
-          1250,
-          1000,
-          2000,
-          1500,
-          1750,
-          1250,
-          1850,
-          400,
-          2250,
-          1500,
-          2500,
-        ],
       },
     ],
   },
